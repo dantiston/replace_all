@@ -34,6 +34,8 @@ class TestReplaceAll(unittest.TestCase):
         ("lengthening", "a", {"a": "aa"}, "aa"),
         ("duplicate", "aa", {"a": "aa"}, "aaaa"),
         ("ambiguous", "aaa", {"aa": "b"}, "ba"),
+        ("overlapping matches", "abba", {"ab": "cc", "bb": "dd"}, "ccba"),
+        ("overlapping replacements", "abac", {"ab": "cc", "ac": "dd"}, "ccdd"),
         (
             "ascii",
             "Hello, world!",
